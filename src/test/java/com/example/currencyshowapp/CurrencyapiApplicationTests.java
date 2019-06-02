@@ -1,4 +1,4 @@
-package com.example.currencyapi;
+package com.example.currencyshowapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.example.currencyapi.model;
+package com.example.currencyshowapp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

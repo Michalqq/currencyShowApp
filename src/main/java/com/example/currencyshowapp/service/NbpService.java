@@ -1,6 +1,6 @@
-package com.example.currencyapi.service;
+package com.example.currencyshowapp.service;
 
-import com.example.currencyapi.model.Currency;
+import com.example.currencyshowapp.model.Currency;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

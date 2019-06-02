@@ -1,7 +1,7 @@
-package com.example.currencyapi.controller;
+package com.example.currencyshowapp.controller;
 
-import com.example.currencyapi.model.Currency;
-import com.example.currencyapi.service.CurrencyService;
+import com.example.currencyshowapp.model.Currency;
+import com.example.currencyshowapp.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
