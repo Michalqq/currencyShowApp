@@ -28,7 +28,7 @@
                 <option th:each="currency : ${currencies}" th:value="${currency.code}" th:text="${currency.currency}">
                 </option>
             </select>
-            <button onclick="currencyApi(document.getElementById('currency').value), chart(6,document.getElementById('currency').value)" type="submit" class="btn btn-primary">Submit</button>
+            <button onclick="currencyApi(document.getElementById('currency').value), chart(15,document.getElementById('currency').value)" type="submit" class="btn btn-primary">Submit</button>
         </div>
         <div class="col-sm-4">
             <h3 id="currency1"></h3>
@@ -36,7 +36,7 @@
         </div>
         <div class="col-sm-4">
             <h3>Last days</h3>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="myChart" width="600" height="500"></canvas>
         </div>
     </div>
 </div>
