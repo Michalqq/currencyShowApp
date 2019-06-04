@@ -15,7 +15,6 @@ public class CurrencyRepository {
         currencies.add(currency.getNewCurrency("euro", "EUR"));
         currencies.add(currency.getNewCurrency("funt szterling", "GBP"));
         currencies.add(currency.getNewCurrency("frank szwajcarski", "CHF"));
-        currencies.add(currency.getNewCurrency("hrywna (Ukraina)", "UAH"));
     }
 
     public static synchronized List<Currency> getCurrenciesList() {
