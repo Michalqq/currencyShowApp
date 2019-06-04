@@ -1,5 +1,6 @@
 package com.example.currencyshowapp;
 
+import com.example.currencyshowapp.repository.CurrencyRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
