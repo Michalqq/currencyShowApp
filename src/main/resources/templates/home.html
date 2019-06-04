@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Exchange with API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="currency.js"></script>
+    <script src="chart.js"></script>
 </head>
 <body>
 
-<p class="article yellow">Super artykuł</p>
+<div class="jumbotron text-center">
+    <h1>Currency rate information</h1>
+    <p>Choose currency and check exchange rates</p>
+</div>
 
-<p class="article">Programowanie jest super</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Choose currency</h3>
 
-<p id="super-important">Jestem super programistą :)</p>
-
-<p>test</p>
-
-</body>
-</html>
+            <select class="text-primary" id="currency" name="currencyName">
+                <option th:each="currency : ${currencies}" th:value="${currency.code}" th:text="${currency.currency}">
+                </option>
+            </select>
+            <button onclick="currencyApi(document.getElementById('currency').value), chart(15,document.getElementById('currency').value)" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-4">
+            <h3 id="currency1"></h3>
+            <p id="exchange-rate"></p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Last days</h3>
+            <canvas id="myChart" width="600" height="500"></canvas>
+        </div>
+    </div>
+</div>
