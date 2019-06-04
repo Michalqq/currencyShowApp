@@ -10,11 +10,12 @@ public class CurrencyRepository {
 
     private CurrencyRepository() {
         currencies = new LinkedList<>();
-        currencies.add(new Currency("dolar amerykański", "USD"));
-        currencies.add(new Currency("euro", "EUR"));
-        currencies.add(new Currency("funt szterling", "GBP"));
-        currencies.add(new Currency("frank szwajcarski", "CHF"));
-        currencies.add(new Currency("hrywna (Ukraina)", "UAH"));
+        Currency currency = new Currency();
+        currencies.add(currency.getNewCurrency("dolar amerykański", "USD"));
+        currencies.add(currency.getNewCurrency("euro", "EUR"));
+        currencies.add(currency.getNewCurrency("funt szterling", "GBP"));
+        currencies.add(currency.getNewCurrency("frank szwajcarski", "CHF"));
+        currencies.add(currency.getNewCurrency("hrywna (Ukraina)", "UAH"));
     }
 
     public static synchronized List<Currency> getCurrenciesList() {

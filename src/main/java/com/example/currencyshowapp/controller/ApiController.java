@@ -21,8 +21,12 @@ public class ApiController {
     private CurrencyService currencyService;
 
     @GetMapping("/exchangerates/{code}")
-    public Currency index(@PathVariable String code){
-    return currencyService.getCurrency(code);
+    public Currency index(@PathVariable String code) {
+        return currencyService.getCurrency(code);
     }
 
+    @GetMapping("/lastexchangerates/{days}/{code}")
+    public Currency index(@PathVariable String code, @PathVariable int days) {
+        return currencyService.getLastExchanges(code, days);
+    }
 }

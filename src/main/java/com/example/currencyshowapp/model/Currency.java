@@ -17,9 +17,11 @@ public class Currency {
 
     private List<Rate> rates = new ArrayList<>();
 
-    public Currency(String currency, String code) {
-        this.currency = currency;
-        this.code = code;
+    public Currency getNewCurrency(String currency, String code) {
+        Currency currencyNew = new Currency();
+        currencyNew.setCurrency(currency);
+        currencyNew.setCode(code);
+        return currencyNew;
     }
 
 }
