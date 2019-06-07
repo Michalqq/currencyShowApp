@@ -28,7 +28,7 @@
                 <option th:each="currency : ${currencies}" th:value="${currency.code}" th:text="${currency.currency}">
                 </option>
             </select>
-            <button onclick="currencyApi(document.getElementById('currency').value), chart(15,document.getElementById('currency').value)" type="submit" class="btn btn-primary">Submit</button>
+            <button onclick="currencyApi(document.getElementById('currency').value), chart(document.getElementById('daysCount').value,document.getElementById('currency').value)" type="submit" class="btn btn-primary">Submit</button>
         </div>
         <div class="col-sm-4">
             <h3 id="currency1"></h3>
@@ -37,6 +37,27 @@
         <div class="col-sm-4">
             <h3>Last days</h3>
             <canvas id="myChart" width="600" height="500"></canvas>
+            <div id="historyDiv">
+                <p style="display:inline">Liczba dni historii: </p>
+                <select class="text-primary" id="daysCount" name="daysCount" style="display: inline" onchange="chart(document.getElementById('daysCount').value,document.getElementById('currency').value)">
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15" selected="selected">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
         </div>
     </div>
 </div>
