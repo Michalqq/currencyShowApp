@@ -2,9 +2,6 @@ function chart(days, currency){
 var dataExchange = new Array();
 var labelExchange = new Array();
 var ctx = document.getElementById('myChart').getContext('2d');
-if (myChart!=null){
-    myChart.destroy();
-    }
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {

@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="currency.js"></script>
     <script src="chart.js"></script>
+    <script src="changeVisibleById.js"></script>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
                 <option th:each="currency : ${currencies}" th:value="${currency.code}" th:text="${currency.currency}">
                 </option>
             </select>
-            <button onclick="currencyApi(document.getElementById('currency').value), chart(document.getElementById('daysCount').value,document.getElementById('currency').value)" type="submit" class="btn btn-primary">Submit</button>
+            <button onclick="changeVisibleById('historyDiv', 'visible'), currencyApi(document.getElementById('currency').value), chart(document.getElementById('daysCount').value,document.getElementById('currency').value)" type="submit" class="btn btn-primary">Submit</button>
         </div>
         <div class="col-sm-4">
             <h3 id="currency1"></h3>
@@ -37,7 +38,7 @@
         <div class="col-sm-4">
             <h3>Last days</h3>
             <canvas id="myChart" width="600" height="500"></canvas>
-            <div id="historyDiv">
+            <div id="historyDiv" style="visibility:hidden">
                 <p style="display:inline">Liczba dni historii: </p>
                 <select class="text-primary" id="daysCount" name="daysCount" style="display: inline" onchange="chart(document.getElementById('daysCount').value,document.getElementById('currency').value)">
                     <option value="5">5</option>
