@@ -1,7 +1,7 @@
 
     function currencyApi(currency) {
         $.ajax({
-            url: "http://localhost:8080/exchangerates/" + currency
+            url: "http://localhost:8082/exchangerates/" + currency
         }).then(function (data) {
            // alert(JSON.stringify(data));
             $('#currency1').text(data.currency);

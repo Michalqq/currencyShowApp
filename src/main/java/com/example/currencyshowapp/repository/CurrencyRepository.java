@@ -1,12 +1,18 @@
 package com.example.currencyshowapp.repository;
 
 import com.example.currencyshowapp.model.Currency;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Data
 public class CurrencyRepository {
     private static List<Currency> currencies;
+
+    private static List<Currency> currenciesFromApi;
 
     private CurrencyRepository() {
         currencies = new LinkedList<>();

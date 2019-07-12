@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
     }
 });
 $.ajax({
-            url: "http://localhost:8080//lastexchangerates/" + days + "/" + currency
+            url: "http://localhost:8082//lastexchangerates/" + days + "/" + currency
         }).then(function (data) {
             for (let i=0; i < days; i++) {
                 dataExchange[i] = parseFloat(JSON.stringify(data.rates[i].bid));

@@ -1,11 +1,15 @@
 package com.example.currencyshowapp.controller;
 
 import com.example.currencyshowapp.model.Currency;
+import com.example.currencyshowapp.model.Rate;
+import com.example.currencyshowapp.repository.CurrencyRepository;
 import com.example.currencyshowapp.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 /*
@@ -23,6 +27,11 @@ public class ApiController {
     @GetMapping("/exchangerates/{code}")
     public Currency index(@PathVariable String code) {
         return currencyService.getCurrency(code);
+    }
+
+    @GetMapping("/test")
+    public List<Currency> list() {
+        return currencyService.getAllCurrencies();
     }
 
     @GetMapping("/lastexchangerates/{days}/{code}")
