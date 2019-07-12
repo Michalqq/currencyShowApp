@@ -15,8 +15,8 @@ public class HomeController {
 
     @GetMapping("/")
     public  String home (ModelMap modelMap){
-        //List<Currency> currenciesAll= (List<Currency>) new NbpService().getAllCurrencies();
-        //modelMap.put("currencies", CurrencyRepository.getCurrenciesList());
+       // List<Currency> currenciesAll= (List<Currency>) new NbpService().getAllCurrencies();
+        modelMap.put("currencies", CurrencyRepository.getCurrenciesList());
         return "home";
     }
     @GetMapping("/nbp")

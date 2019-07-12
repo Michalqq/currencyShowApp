@@ -15,6 +15,8 @@ public class Currency {
 
     private String code;
 
+    private List<Rate> rates;
+
     public Currency getNewCurrency(String currency, String code) {
         Currency currencyNew = new Currency();
         currencyNew.setCurrency(currency);
