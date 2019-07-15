@@ -30,7 +30,6 @@ public class ApiController {
     @GetMapping("/test")
     public void list() {
         StringBuffer stringBuffer = new StringBuffer("http://api.nbp.pl/api/exchangerates/tables/A/?format=json");
-        currencyService.parseJson(stringBuffer);
     }
 
     @GetMapping("/lastexchangerates/{days}/{code}")
