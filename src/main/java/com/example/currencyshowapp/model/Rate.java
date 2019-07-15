@@ -14,5 +14,7 @@ public class Rate {
 
     private LocalDate effectiveDate;
 
-    private List<Currency> currencies = new ArrayList<>();
+    private String currency;
+
+    private String code;
 }

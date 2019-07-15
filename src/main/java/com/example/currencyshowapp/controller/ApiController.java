@@ -1,8 +1,6 @@
 package com.example.currencyshowapp.controller;
 
 import com.example.currencyshowapp.model.Currency;
-import com.example.currencyshowapp.model.Rate;
-import com.example.currencyshowapp.repository.CurrencyRepository;
 import com.example.currencyshowapp.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,8 +28,9 @@ public class ApiController {
     }
 
     @GetMapping("/test")
-    public List<Currency> list() {
-        return currencyService.getAllCurrencies();
+    public void list() {
+        StringBuffer stringBuffer = new StringBuffer("http://api.nbp.pl/api/exchangerates/tables/A/?format=json");
+        currencyService.parseJson(stringBuffer);
     }
 
     @GetMapping("/lastexchangerates/{days}/{code}")
